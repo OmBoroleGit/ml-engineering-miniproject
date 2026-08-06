@@ -1,0 +1,22 @@
+# Core
+numpy
+pandas
+pillow
+
+# Week 1 (M2) - preprocessing/augmentation
+albumentations
+opencv-python-headless
+matplotlib
+
+# Week 2 (M3) - modeling & experiment tracking (add as you pick a framework)
+scikit-learn
+mlflow
+# torch / torchvision   OR   tensorflow   (uncomment your choice)
+
+# Week 3 (M4) - serving
+fastapi
+uvicorn
+python-multipart
+
+# Data versioning
+dvc
