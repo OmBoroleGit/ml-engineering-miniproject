@@ -1,0 +1,5 @@
+outs:
+- md5: edae8cbdd3e36050a6ea8a78b39ae52b
+  size: 403341
+  hash: md5
+  path: casting_cnn_best.pth
