@@ -19,8 +19,13 @@ fastapi
 uvicorn
 python-multipart
 
+# Testing
+pytest
+httpx2
+
 # Data versioning
 dvc
+dvc-gdrive
 
 # Feature store
 pyarrow
