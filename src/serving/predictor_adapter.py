@@ -16,15 +16,23 @@ as he wrote it. This file bridges two small differences:
 """
 
 import io
+from pathlib import Path
 
 from PIL import Image
 
 from src.predict import CastingPredictor
 
+# CastingPredictor's default model_path is relative ("models/...") which only
+# resolves correctly if launched from the exact project root. Passing an
+# absolute path here instead makes this work regardless of the current
+# working directory -- the API, a notebook, anything.
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+_RESNET_WEIGHTS_PATH = _PROJECT_ROOT / "models" / "resnet18_transfer_best.pth"
+
 
 class DefectPredictorAdapter:
     def __init__(self):
-        self._predictor = CastingPredictor()
+        self._predictor = CastingPredictor(model_path=str(_RESNET_WEIGHTS_PATH))
 
     def predict(self, image: Image.Image) -> dict:
         buffer = io.BytesIO()

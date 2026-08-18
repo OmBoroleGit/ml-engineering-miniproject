@@ -14,8 +14,10 @@ from PIL import Image, UnidentifiedImageError
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 
+from src.serving.logger import log_prediction
+
 # ---------------------------------------------------------------------------
-# PLACEHOLDER: swap this one import for the real predictor once it's ready.
+# Swap this one import to change which predictor the API uses.
 # Everything else in this file stays exactly the same -- .predict() has the
 # identical interface either way.
 from src.serving.predictor_adapter import DefectPredictorAdapter as Predictor
@@ -60,4 +62,5 @@ async def predict(file: UploadFile = File(...)):
         )
 
     result = predictor.predict(image)
+    log_prediction(file.filename or "unknown", result)
     return result
