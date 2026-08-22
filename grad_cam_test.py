@@ -49,7 +49,7 @@ class GradCAM:
         return heatmap.cpu().detach().numpy()
 
 
-def run_gradcam(image_path="cast_stress_test4.jpg", model_path="models/resnet18_transfer_best.pth"):
+def run_gradcam(image_path="cast_stress_test6.jpg", model_path="models/resnet18_transfer_best.pth"):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # 1. Load Model

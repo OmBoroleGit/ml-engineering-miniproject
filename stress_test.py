@@ -5,7 +5,7 @@ predictor = CastingPredictor()
 
 # 2. Open your manually disturbed image file as raw bytes
 # Replace this with the actual name of your disturbed photo
-image_path = "cast_stress_test4.jpg" 
+image_path = "cast_stress_test6.jpg" 
 with open(image_path, "rb") as file:
     raw_image_bytes = file.read()
 
