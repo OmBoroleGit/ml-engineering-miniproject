@@ -8,6 +8,7 @@ This project fulfills the EC-1 Mini-Project requirements for Machine Learning En
 ## 2. System Architecture
 Our pipeline connects the trained model to the outside world via a REST API, while seamlessly logging data for drift detection and retraining[cite: 1].
 
+```text
 [ Factory Camera ] 
         │
         ▼ (Image Upload)
@@ -23,6 +24,7 @@ Our pipeline connects the trained model to the outside world via a REST API, whi
 │ - Image Translation  │               │ - Confidence Tracking   │
 │ - Defect Prediction  │               │ - Retraining Triggers   │
 └──────────────────────┘               └─────────────────────────┘
+```
 
 ## 3. Technology Stack
 * **Data Versioning:** DVC (Data Version Control)[cite: 1]
